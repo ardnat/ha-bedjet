@@ -24,6 +24,15 @@ Configuration variables:
 
 - **mac** (_Optional_): Bluetooth MAC address of your BedJet, if you want to specify. If not specified, this integration will search for all BedJets within range.
 
+## Communication Protocol
+
+This integration communicates with BedJet devices using **Bluetooth Low Energy (BLE)**, not traditional TCP/IP network ports. The integration uses BLE GATT characteristics for communication:
+
+- **Command UUID**: `00002004-bed0-0080-aa55-4265644a6574` - Used to send commands to the BedJet
+- **Subscription UUID**: `00002000-bed0-0080-aa55-4265644a6574` - Used to receive status updates from the BedJet
+
+No network ports are used; all communication happens over Bluetooth within your local Bluetooth range (typically ~10-30 meters).
+
 ## Screenshot
 
 ![screenshot](https://i.imgur.com/Y836CWU.png)
